@@ -125,7 +125,7 @@ def main():
         plot_G1_G3()
     with col2:
         plot_G2_G3()
-    st.markdown('First period and second period grade have a significant on the Final Grade.')
+    st.markdown('First period grade and second period grade have a significance impact on the Final Grade.')
     st.divider()
 
     st.subheader("Student's information:")
