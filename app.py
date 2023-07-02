@@ -70,11 +70,11 @@ def get_user_inputs():
     with col1:
         studytime = st.select_slider("Weekly Study Time",list(studytime_op.keys()),"2 to 5 hours")
         health = st.select_slider("Current Health Status", list(good_bad_op.keys()), "Good")  
-        g1 = st.number_input("First Period Grade (%)", min_value= 0, max_value = 100, value = 50)
+        g1 = st.number_input("First Period Grade (%)",format="%.2f", min_value= 0.0, max_value = 100.00, value = 60.00, step=1.0)
     with col2:
         goout = st.select_slider("Going Out with Friends", list(goout_op.keys()), 'Often')
         famrel = st.select_slider("Quality of Family Relatonsips",list(good_bad_op.keys()),"Normal")
-        g2 = st.number_input("Second Period Grade (%)", min_value= 0, max_value = 100, value = 50)
+        g2 = st.number_input("Second Period Grade (%)", format="%.2f", min_value= 0.00, max_value = 100.00, value = 78.50, step=1.0)
     
     df_pred = pd.DataFrame(data=np.zeros(shape=(1, len(features))), columns=features, dtype='float')
     df_pred['age'] = standardize_data('age', age)
