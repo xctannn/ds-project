@@ -94,11 +94,11 @@ def get_user_inputs():
 st.set_page_config(layout="wide")
 st.title("Predicting Student Performance in Secondary Education")
 df_pred = get_user_inputs()
-# st.dataframe(df_pred)
 
-# for i in features:
-#     st.markdown(i)
 model = joblib.load('linear_reg_model.joblib')
-pred = f"{model.predict(df_pred)[0]*5:.2f}%"
+value_pred = model.predict(df_pred)[0]*5 
+if value_pred < 0:
+    value_pred = 0
+pred = f"{value_pred:.2f}%"
 st.metric(label="The final grade score is estimated to be", value=pred)
 
